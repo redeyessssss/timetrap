@@ -1,0 +1,50 @@
+Build and Release
+
+on:
+  release:
+    types: [created]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        include:
+          - os: ubuntu-latest
+            name: linux
+            ext: ''
+          - os: windows-latest
+            name: windows
+            ext: '.exe'
+          - os: macos-latest
+            name: macos
+            ext: ''
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install pyinstaller
+      
+      - name: Build executable
+        run: pyinstaller --onefile --name myapp main.py
+      
+      - name: Upload to Release
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./dist/myapp${{ matrix.ext }}
+          asset_name: myapp-${{ matrix.name }}${{ matrix.ext }}
+          asset_content_type: application/octet-stream
