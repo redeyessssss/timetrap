@@ -317,13 +317,29 @@ Contributions are welcome! Feel free to:
 
 ## 📄 License
 
-MIT License - Feel free to use, modify, and distribute Time Trap.
+
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)
+
+Copyright (c) 2025 Anupom Kumar Ghosh
+
+You are free to:
+
+- **Share** — copy and redistribute the material in any medium or format
+- **Attribute** — give appropriate credit to the author
+
+Under the following terms:
+
+- **NonCommercial** — You may not use the material for commercial purposes.
+- **NoDerivatives** — If you remix, transform, or build upon the material, you may not distribute the modified material.
+- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+
+Full license details: https://creativecommons.org/licenses/by-nc-nd/4.0/
 
 ---
 
 ## 👨‍💻 Author
 
-Created by **Anupam Ghosh**
+Created by **Anupom Ghosh**
 
 ---
 
